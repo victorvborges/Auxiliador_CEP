@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Finalizado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        .capitulo-container {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .capitulo-container h2 {
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Projeto de Pesquisa Concluído</h1>
+
+    <div>
+        {% for linha in resultado.split('\n\n') %}
+            <div class="capitulo-container">
+                <p>{{ linha }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <form action="/export_docx" method="GET">
+        <button type="submit">Exportar para DOCX</button>
+    </form>
+
+</body>
+</html>
